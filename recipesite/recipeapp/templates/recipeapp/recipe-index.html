@@ -1,0 +1,27 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block title %}
+Recipe Index
+{% endblock %}
+
+{% block body %}
+Hello dear visitor of Recipes Application!
+
+<div>
+    <ul>
+        {% for recipe in recipes %}
+        <li>{{ recipe.name }} in {{ recipe.cooking_time_min }} min</li>
+        {% if time < 6 %}
+        <span>*Easy recipe</span>
+        {% endif %}
+        {% empty %}
+        No recipes here yet...
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <strong>
+        You have {{ items }} item{{ items|pluralize }}
+    </strong>
+</div>
+{% endblock %}

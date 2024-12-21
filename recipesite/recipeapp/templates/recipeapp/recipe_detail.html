@@ -1,0 +1,31 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block title %}
+Recipe #{{ object.pk }} details
+{% endblock %}
+
+{% block body %}
+<h1>Recipe #{{ object.pk }}</h1>
+<div>
+    <p>Name: {{ object.name }}</p>
+    <p>Cooking time: {{ object.cooking_time_min }}
+        ({% if object.cooking_time_min < 6 %}
+        <span>*Easy recipe</span>
+        {% endif %}
+        )
+    </p>
+    <p>Recipe author: {% firstof object.author.first_name object.author.username %}</p>
+    <div>
+        Ingredients for recipe:
+        <ul>
+            {% for ingredient in object.ingredients.all %}
+            <li>{{ ingredient.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<br>
+<div>
+    <a href="{% url 'recipeapp:recipes_list' %}">Back to recipes</a>
+</div>
+{% endblock %}

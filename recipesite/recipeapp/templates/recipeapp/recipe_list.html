@@ -1,0 +1,43 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block title %}
+Recipes list
+{% endblock %}
+
+{% block body %}
+<h1>Recipes:</h1>
+{% if object_list %}
+<div>
+    {% for recipe in object_list %}
+    <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
+    >Details #{{ recipe.pk }}</a></p>
+    <div>
+        <p>Name: {{ recipe.name }}</p>
+        <p>Cooking time: {{ recipe.cooking_time_min }}
+            ({% if recipe.cooking_time_min < 6 %}
+            <span>*Easy recipe</span>
+            {% endif %}
+            )
+        </p>
+        <p>Recipe author: {% firstof recipe.author.first_name recipe.author.username %}</p>
+        <div>
+            Ingredients for recipe:
+            <ul>
+                {% for ingredient in recipe.ingredients.all %}
+                <li>{{ ingredient.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h3>No recipes yet</h3>
+{% endif %}
+<br>
+<div>
+    <a href="{% url 'recipeapp:recipe_create' %}">
+        Create a new recipe
+    </a>
+</div>
+{% endblock %}
