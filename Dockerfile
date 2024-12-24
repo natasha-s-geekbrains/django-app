@@ -11,3 +11,5 @@ RUN pip install -r requirements.txt
 
 COPY recipesite .
 
+# CMD ['gunicorn', 'recipesite.wsgi:application', '--bind', '0.0.0.0:8000']
+
