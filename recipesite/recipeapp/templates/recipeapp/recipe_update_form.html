@@ -1,26 +1,25 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Create recipe
+Update recipe
 {% endblock %}
 
 {% block body %}
-<h1>Create a new recipe</h1>
+<h1>Update recipe</h1>
 <div>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form.as_p }}
 
         <button type="submit">
-            Create
+            Update
         </button>
     </form>
 </div>
 <br>
 <div>
-    <a href="{% url 'recipeapp:recipes_list' %}">
-        Back to recipes list
-    </a>
+    <a href="{% url 'recipeapp:recipe_details' pk=object.pk %}"
+    >Back to recipes #{{ object.pk }}</a>
 </div>
 {% endblock %}

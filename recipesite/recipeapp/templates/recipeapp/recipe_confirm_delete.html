@@ -1,0 +1,22 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block title %}
+Confirm archive {{ object.name }}
+{% endblock %}
+
+{% block body %}
+<h1>Are you sure you want to archive {{ object.name }}?</h1>
+<br>
+<div>
+    <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
+    >Back to recipe #{{ object.pk }}</a>
+</div>
+<br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ from.as_p }}
+        <button type="submit">Archive</button>
+    </form>
+</div>
+{% endblock %}

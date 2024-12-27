@@ -45,6 +45,13 @@ class IngredientImage(models.Model):
     description = models.CharField(max_length=200, null=False, blank=True)
 
 
+def recipe_preview_directory_path(instance: 'Recipe', filename: str) -> str:
+    return 'recipes/recipe_{pk}/preview/{filename}'.format(
+        pk=instance.pk,
+        filename=filename,
+    )
+
+
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(null=False, blank=True)
@@ -53,4 +60,17 @@ class Recipe(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT)
     cooking_time_min = models.PositiveIntegerField(default=0)
     ingredients = models.ManyToManyField(Ingredient, related_name='recipes')
-    dish_image = models.FileField(null=True, upload_to='recipes/images/')
+    preview = models.ImageField(null=True, blank=True, upload_to=recipe_preview_directory_path)
+
+
+def recipe_images_directory_path(instance: 'RecipeImage', filename: str) -> str:
+    return 'recipes/recipe_{pk}/images/{filename}'.format(
+        pk=instance.recipe.pk,
+        filename=filename,
+    )
+
+
+class RecipeImage(models.Model):
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to=recipe_images_directory_path)
+    description = models.CharField(max_length=200, null=False, blank=True)

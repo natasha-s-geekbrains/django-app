@@ -6,16 +6,15 @@ from .models import Recipe, Ingredient
 
 
 class RecipeForm(forms.ModelForm):
+    ingredients = forms.ModelMultipleChoiceField(queryset=Ingredient.objects.all(), widget=forms.CheckboxSelectMultiple())
+
     class Meta:
         model = Recipe
-        fields = 'name', 'description', 'cooking_time_min', 'ingredients'
+        fields = 'name', 'description', 'cooking_time_min', 'ingredients', 'preview'
 
-
-# class RecipeForm(forms.Form):
-#     name = forms.CharField(max_length=100)
-#     description = forms.CharField(label='Description (Cooking steps)',
-#                                   widget=forms.Textarea(attrs={'rows': '15', 'cols': '45'}))
-#     cooking_time_min = forms.DecimalField(min_value=0.01, decimal_places=2)
+    # images = forms.ImageField(
+    #     widget=forms.ClearableFileInput(attrs={'allow_multiple_selected': True}),
+    # )
 
 
 class IngredientForm(forms.ModelForm):

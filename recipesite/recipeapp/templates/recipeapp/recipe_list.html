@@ -28,6 +28,9 @@ Recipes list
                 {% endfor %}
             </ul>
         </div>
+        {% if recipe.preview %}
+            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
+        {% endif %}
     </div>
     {% endfor %}
 </div>

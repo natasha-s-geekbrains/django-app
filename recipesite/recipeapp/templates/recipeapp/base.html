@@ -9,15 +9,20 @@
     </title>
 </head>
 <body>
+<div>
+    <ul>
+        <li>
+              <a href="{% url 'recipeapp:index' %}">Home</a>
+        </li>
+        <li>
+              <a href="{% url 'recipeapp:recipe_create' %}">Create recipe</a>
+        </li>
+    </ul>
+
+</div>
 {% block body %}
     Base body
 {% endblock %}
-<!--<div>-->
-<!--    It is {% now 'jS F Y' %}, {% now 'H:i' %}-->
-<!--</div>-->
-<!--<div>-->
-<!--    {% now 'l' as current_weekday %}-->
-<!--    {{ current_weekday }}-->
-<!--</div>-->
+
 </body>
 </html>

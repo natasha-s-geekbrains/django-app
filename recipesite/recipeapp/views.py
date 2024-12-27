@@ -55,10 +55,10 @@ class IngredientViewSet(ModelViewSet):
 class RecipeIndexView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
         recipes = list(Recipe.objects.all())
-        recipes = random.sample(recipes, 3)
+        recipes = random.sample(recipes, 5)
         context = {
             'recipes': recipes,
-            'items': 5,
+            'recipe': 'several',
         }
         return render(request, 'recipeapp/recipe-index.html', context=context)
 
@@ -99,9 +99,18 @@ class IngredientCreateView(CreateView):
     success_url = reverse_lazy('recipeapp:ingredients_list')
 
 
+class RecipeCreateView(CreateView):
+    model = Recipe
+    form_class = RecipeForm
+    success_url = reverse_lazy('recipeapp:recipes_list')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
 class IngredientUpdateView(UpdateView):
     model = Ingredient
-    # fields = 'name', 'description', 'measurement_unit', 'archived', 'preview'
     template_name_suffix = '_update_form'
     form_class = IngredientForm
 
@@ -122,9 +131,32 @@ class IngredientUpdateView(UpdateView):
         return response
 
 
+class RecipeUpdateView(UpdateView):
+    model = Recipe
+    template_name_suffix = '_update_form'
+    form_class = RecipeForm
+
+    def get_success_url(self):
+        return reverse(
+            'recipeapp:recipe_details',
+            kwargs={'pk': self.object.pk}
+        )
+
+
 class IngredientDeleteView(DeleteView):
     model = Ingredient
     success_url = reverse_lazy('recipeapp:ingredients_list')
+
+    def form_valid(self, form):
+        success_url = self.get_success_url()
+        self.object.archived = True
+        self.object.save()
+        return HttpResponseRedirect(success_url)
+
+
+class RecipeDeleteView(DeleteView):
+    model = Recipe
+    success_url = reverse_lazy('recipeapp:recipes_list')
 
     def form_valid(self, form):
         success_url = self.get_success_url()
@@ -193,3 +225,5 @@ def create_recipe(request: HttpRequest) -> HttpResponse:
     }
 
     return render(request, 'recipeapp/create-recipe.html', context=context)
+
+
