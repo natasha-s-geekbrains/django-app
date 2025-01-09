@@ -58,7 +58,7 @@ class RecipeIndexView(View):
         recipes = random.sample(recipes, 5)
         context = {
             'recipes': recipes,
-            'recipe': 'several',
+            # 'recipe': 'several',
         }
         return render(request, 'recipeapp/recipe-index.html', context=context)
 

@@ -1,27 +1,21 @@
 {% extends 'recipeapp/base.html' %}
 
-{% load i18n %}
+<!--{% load i18n %}-->
 
 {% block title %}
-{% translate 'Ingredients list' %}
+Ingredients list
 {% endblock %}
 
 {% block body %}
-<h1>{% translate 'Ingredients' %}:</h1>
+<h1>Ingredients:</h1>
 {% if ingredients %}
-<div>
-    {% blocktranslate count ingredients_count=ingredients|length %}
-    There is only one ingredient.
-    {% plural %}
-    There are {{ ingredients_count }} ingredients
-    {% endblocktranslate %}
-</div>
+
 <div>
     {% for ingredient in ingredients %}
     <div>
         <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"
-        >{% translate 'Name' context 'ingredient name' %}: {{ ingredient.name }}</a></p>
-        <p>{% translate 'Unit of measure' %}: {{ ingredient.measurement_unit }}</p>
+        >Name: {{ ingredient.name }}</a></p>
+        <p>Unit of measure: {{ ingredient.measurement_unit }}</p>
 
         {% if ingredient.preview %}
         <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
@@ -32,17 +26,13 @@
 <br>
 <div>
     <a href="{% url 'recipeapp:ingredient_create' %}"
-    >{% translate 'Create a new ingredient' %}</a>
+    >Create a new ingredient</a>
 </div>
 {% else %}
 {% url 'recipeapp:ingredient_create' as create_ingredient_url %}
-{% blocktranslate %}
 <h3>No ingredients yet</h3>
 <a href="{{ create_ingredient_url }}"
 >Create a new one</a>
-{% endblocktranslate %}
-
 {% endif %}
-
 {% endblock %}
 
