@@ -7,30 +7,52 @@
         Base Title
         {% endblock %}
     </title>
+    <style>
+        html, body {
+        margin: 0;
+        padding: 0;
+        }
+        header {
+        height: 150px;
+        padding: 20px;
+        }
+        a {
+        text-decoration: none;
+        font-style: italic;
+        }
+        a:hover {
+        text-decoration: underline;
+        color: red;
+        }
+    </style>
 </head>
 <body>
-<div>
-    <ul>
-        <li>
-              <a href="{% url 'recipeapp:index' %}">Home</a>
-        </li>
-        <li>
-              <a href="{% url 'recipeapp:recipe_create' %}">Create recipe</a>
-        </li>
-        <li>
-              <a href="{% url 'recipeapp:recipes_list' %}">Recipes list</a>
-        </li>
-        <li>
-              <a href="{% url 'recipeapp:ingredient_create' %}">Create ingredient</a>
-        </li>
-        <li>
-              <a href="{% url 'recipeapp:ingredients_list' %}">Ingredients list</a>
-        </li>
-    </ul>
-
-</div>
+<header>
+    <div>
+        <ul>
+            <li>
+                <a href="{% url 'recipeapp:index' %}">Домашняя страница</a>
+            </li>
+            <li>
+                <a href="{% url 'recipeapp:recipes_list' %}">Посмотреть все рецепты</a>
+            </li>
+            <li>
+                <a href="{% url 'recipeapp:recipe_create' %}">Добавить новый рецепт</a>
+            </li>
+            <li>
+                <a href="{% url 'recipeapp:ingredient_create' %}">Добавить новый ингредиент</a>
+            </li>
+            <li>
+                <a href="{% url 'recipeapp:ingredients_list' %}">Посмотреть все ингредиенты</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2>Сайт рецептов</h2>
+    </div>
+</header>
 {% block body %}
-    Base body
+Base body
 {% endblock %}
 
 </body>

@@ -1,11 +1,11 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Recipe #{{ object.pk }} details
+Рецепт #{{ object.pk }} details
 {% endblock %}
 
 {% block body %}
-<h1>Recipe #{{ object.pk }}</h1>
+<h1>Рецепт #{{ object.pk }}</h1>
 <div>
     <p>Name: {{ object.name }}</p>
     <p>Cooking time: {{ object.cooking_time_min }}
