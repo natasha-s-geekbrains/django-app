@@ -13,7 +13,7 @@
         padding: 0;
         }
         header {
-        height: 150px;
+        height: 200px;
         padding: 20px;
         }
         a {
@@ -44,6 +44,15 @@
             </li>
             <li>
                 <a href="{% url 'recipeapp:ingredients_list' %}">Посмотреть все ингредиенты</a>
+            </li>
+            <li>
+                <a href="{% url 'myauth:login' %}">Войти под своим именем</a>
+            </li>
+            <li>
+                <a href="{% url 'myauth:register' %}">Зарегистрировать нового пользователя</a>
+            </li>
+            <li>
+                <a href="{% url 'myauth:logout' %}">Выйти</a>
             </li>
         </ul>
     </div>

@@ -1,12 +1,12 @@
 {% extends 'myauth/base.html' %}
 
 {% block title %}
-About me
+О пользователе
 {% endblock %}
 
 
 {% block body %}
-<h1>User info</h1>
+<h1>Данные пользователя</h1>
 {% if user.is_authenticated %}
 <h2>Detail</h2>
 <h2>Username: {{ user.username }}</h2>
