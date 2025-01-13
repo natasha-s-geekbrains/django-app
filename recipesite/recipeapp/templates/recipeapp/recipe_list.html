@@ -1,16 +1,16 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Recipes list
+Cписок рецептов
 {% endblock %}
 
 {% block body %}
-<h1>Recipes:</h1>
+<h1><u>Список всех рецептов:</u></h1>
 {% if object_list %}
 <div>
     {% for recipe in object_list %}
     <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-    >Details #{{ recipe.pk }}</a></p>
+    >Рецепт #{{ recipe.pk }}</a></p>
     <div>
         <p>Name: {{ recipe.name }}</p>
         <p>Cooking time: {{ recipe.cooking_time_min }}

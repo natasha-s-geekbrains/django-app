@@ -1,12 +1,12 @@
 {% extends 'myauth/base.html' %}
 
 {% block title %}
-About me
+О пользователе
 {% endblock %}
 
 
 {% block body %}
-<h1>User info</h1>
+<h1>Данные пользователя</h1>
 {% if user.is_authenticated %}
 <h2>Detail</h2>
 <h2>Username: {{ user.username }}</h2>
@@ -15,6 +15,6 @@ About me
 <h2>Email: {{ user.email }}</h2>
 <h2>Bio: {{ user.profile.bio }}</h2>
 {% else %}
-<h2>User is anonimous</h2>
+<h2>Невозможно определить пользователя, так как никто не выполнил вход</h2>
 {% endif %}
 {% endblock %}

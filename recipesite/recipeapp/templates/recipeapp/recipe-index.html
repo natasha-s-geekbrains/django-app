@@ -1,12 +1,10 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Recipe Index
+Сайт рецептов
 {% endblock %}
 
 {% block body %}
-Hello dear visitor of Recipes Application!
-
 <div>
     <ul>
         {% for recipe in recipes %}
@@ -23,7 +21,6 @@ Hello dear visitor of Recipes Application!
         {% empty %}
         No recipes here yet...
         {% endfor %}
-
     </ul>
 </div>
 {% endblock %}
