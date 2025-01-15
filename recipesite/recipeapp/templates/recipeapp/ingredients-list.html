@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block body %}
-<h1><u>Список всех ингредиентов:</u></h1>
-{% if ingredients %}
 
-<div>
+<div class="fixed-container">
+    <h1><u>Список всех ингредиентов:</u></h1>
+    {% if ingredients %}
     {% for ingredient in ingredients %}
     <div>
         <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"
@@ -22,17 +22,18 @@
         {% endif %}
     </div>
     {% endfor %}
+    <br>
+    <div>
+        <a href="{% url 'recipeapp:ingredient_create' %}"
+        >Create a new ingredient</a>
+    </div>
+    {% else %}
+    {% url 'recipeapp:ingredient_create' as create_ingredient_url %}
+    <h3>No ingredients yet</h3>
+    <a href="{{ create_ingredient_url }}"
+    >Create a new one</a>
+    {% endif %}
 </div>
-<br>
-<div>
-    <a href="{% url 'recipeapp:ingredient_create' %}"
-    >Create a new ingredient</a>
-</div>
-{% else %}
-{% url 'recipeapp:ingredient_create' as create_ingredient_url %}
-<h3>No ingredients yet</h3>
-<a href="{{ create_ingredient_url }}"
->Create a new one</a>
-{% endif %}
+
 {% endblock %}
 

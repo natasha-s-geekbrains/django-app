@@ -5,22 +5,26 @@
 {% endblock %}
 
 {% block body %}
-<div>
-    <ul>
-        {% for recipe in recipes %}
-        <li>
-            <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-            >{{ recipe.name }} in {{ recipe.cooking_time_min }} min</a>
-            {% if time < 6 %}
-            <span>*Easy recipe</span>
-            {% endif %}
-            {% if recipe.preview %}
-                <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
-            {% endif %}
+<div class="section-index">
+    <div>
+        <ul>
+            {% for recipe in recipes %}
+            <li>
+                <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
+                >{{ recipe.name }} in {{ recipe.cooking_time_min }} min</a>
+                {% if time < 6 %}
+                <span>*Easy recipe</span>
+                {% endif %}
+    </div>
+    <div>
+        {% if recipe.preview %}
+        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
+        {% endif %}
         </li>
         {% empty %}
         No recipes here yet...
         {% endfor %}
-    </ul>
+        </ul>
+    </div>
 </div>
 {% endblock %}

@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block body %}
-<h1><u>Добавить новый ингредиент:</u></h1>
-<div>
+
+<div class="fixed-container">
+    <h1><u>Добавить новый ингредиент:</u></h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
@@ -16,9 +17,10 @@
             Create
         </button>
     </form>
+    <br>
+    <div>
+        <a href="{% url 'recipeapp:ingredients_list' %}">Back to ingredients list</a>
+    </div>
 </div>
-<br>
-<div>
-    <a href="{% url 'recipeapp:ingredients_list' %}">Back to ingredients list</a>
-</div>
+
 {% endblock %}

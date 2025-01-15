@@ -5,18 +5,20 @@ Confirm archive {{ object.name }}
 {% endblock %}
 
 {% block body %}
-<h1>Are you sure you want to archive {{ object.name }}?</h1>
-<br>
-<div>
+
+<div class="fixed-container">
+    <h1>Are you sure you want to archive {{ object.name }}?</h1>
+    <br>
     <a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"
     >Back to ingredient #{{ object.pk }}</a>
+    <br>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ from.as_p }}
+            <button type="submit">Archive</button>
+        </form>
+    </div>
 </div>
-<br>
-<div>
-    <form method="post">
-        {% csrf_token %}
-        {{ from.as_p }}
-        <button type="submit">Archive</button>
-    </form>
-</div>
+
 {% endblock %}
