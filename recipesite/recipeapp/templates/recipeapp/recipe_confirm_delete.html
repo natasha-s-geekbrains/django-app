@@ -1,22 +1,24 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Confirm archive {{ object.name }}
+Подтвердить удаление {{ object.name }}
 {% endblock %}
 
 {% block body %}
-<h1>Are you sure you want to archive {{ object.name }}?</h1>
-<br>
-<div>
+
+<div class="fixed-container">
+    <h1>Вы уверены, что хотите удалить рецепт {{ object.name }}?</h1>
+    <br>
     <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
     >Back to recipe #{{ object.pk }}</a>
+    <br>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ from.as_p }}
+            <button type="submit">Archive</button>
+        </form>
+    </div>
 </div>
-<br>
-<div>
-    <form method="post">
-        {% csrf_token %}
-        {{ from.as_p }}
-        <button type="submit">Archive</button>
-    </form>
-</div>
+
 {% endblock %}

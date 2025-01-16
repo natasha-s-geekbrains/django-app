@@ -14,7 +14,25 @@
         }
         header {
         height: 200px;
-        padding: 20px;
+        padding: 0 40px;
+        }
+        .header-image {
+        
+        }
+        header > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        section {
+        padding: 0 40px;
+        }
+        .fixed-container {
+        max-width: 1000px;
+        height: 100%
+        margin-left: auto;
+        margin-right: auto;
+        background-color: floralwhite;
         }
         a {
         text-decoration: none;
@@ -24,48 +42,80 @@
         text-decoration: underline;
         color: red;
         }
+        .section-index {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        }
+        footer {
+        padding: 30px;
+        background-color: lightblue;
+        }
+        footer > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        }
     </style>
 </head>
 <body>
 <header>
-    <div>
-        <ul>
-            <li>
-                <a href="{% url 'recipeapp:index' %}">Домашняя страница</a>
-            </li>
-            <li>
-                <a href="{% url 'recipeapp:recipes_list' %}">Посмотреть все рецепты</a>
-            </li>
-            <li>
-                <a href="{% url 'recipeapp:recipe_create' %}">Добавить новый рецепт</a>
-            </li>
-            <li>
-                <a href="{% url 'recipeapp:ingredient_create' %}">Добавить новый ингредиент</a>
-            </li>
-            <li>
-                <a href="{% url 'recipeapp:ingredients_list' %}">Посмотреть все ингредиенты</a>
-            </li>
-            <li>
-                <a href="{% url 'myauth:login' %}">Войти под своим именем</a>
-            </li>
-            <li>
-                <a href="{% url 'myauth:register' %}">Зарегистрировать нового пользователя</a>
-            </li>
-            <li>
-                <a href="{% url 'myauth:logout' %}">Выйти</a>
-            </li>
-            <li>
-                <a href="{% url 'myauth:about-me' %}">Кто текущий пользователь</a>
-            </li>
-        </ul>
+    <div class="fixed-container">
+        <div>
+            <h2>Сайт рецептов</h2>
+        </div>
+        <div class="header-image">
+            <img src="" alt="">
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <a href="{% url 'recipeapp:index' %}">Домашняя страница</a>
+                </li>
+                <li>
+                    <a href="{% url 'recipeapp:recipes_list' %}">Посмотреть все рецепты</a>
+                </li>
+                <li>
+                    <a href="{% url 'recipeapp:recipe_create' %}">Добавить новый рецепт</a>
+                </li>
+                <li>
+                    <a href="{% url 'recipeapp:ingredient_create' %}">Добавить новый ингредиент</a>
+                </li>
+                <li>
+                    <a href="{% url 'recipeapp:ingredients_list' %}">Посмотреть все ингредиенты</a>
+                </li>
+                <li>
+                    <a href="{% url 'myauth:login' %}">Войти под своим именем</a>
+                </li>
+                <li>
+                    <a href="{% url 'myauth:register' %}">Зарегистрировать нового пользователя</a>
+                </li>
+                <li>
+                    <a href="{% url 'myauth:logout' %}">Выйти</a>
+                </li>
+                <li>
+                    <a href="{% url 'myauth:about-me' %}">Кто текущий пользователь</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <h2>Сайт рецептов</h2>
-    </div>
+
 </header>
-{% block body %}
-Base body
-{% endblock %}
+<section>
+    <div class="fixed-container">
+        {% block body %}
+        Base body
+        {% endblock %}
+    </div>
+</section>
+
+<footer>
+    <div class="fixed-container">
+        <div>+666-333-222-33-22</div>
+        <button>Кнопка в разработке</button>
+    </div>
+</footer>
 
 </body>
 </html>

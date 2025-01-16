@@ -5,9 +5,10 @@ Cписок рецептов
 {% endblock %}
 
 {% block body %}
-<h1><u>Список всех рецептов:</u></h1>
-{% if object_list %}
-<div>
+
+<div class="fixed-container">
+    <h1><u>Список всех рецептов:</u></h1>
+    {% if object_list %}
     {% for recipe in object_list %}
     <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
     >Рецепт #{{ recipe.pk }}</a></p>
@@ -29,18 +30,19 @@ Cписок рецептов
             </ul>
         </div>
         {% if recipe.preview %}
-            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
+        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
         {% endif %}
     </div>
     {% endfor %}
+    {% else %}
+    <h3>No recipes yet</h3>
+    {% endif %}
+    <br>
+    <div>
+        <a href="{% url 'recipeapp:recipe_create' %}">
+            Создать новый рецепт
+        </a>
+    </div>
 </div>
-{% else %}
-<h3>No recipes yet</h3>
-{% endif %}
-<br>
-<div>
-    <a href="{% url 'recipeapp:recipe_create' %}">
-        Create a new recipe
-    </a>
-</div>
+
 {% endblock %}

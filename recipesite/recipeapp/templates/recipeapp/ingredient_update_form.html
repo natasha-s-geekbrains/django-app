@@ -5,8 +5,9 @@ Update ingredient
 {% endblock %}
 
 {% block body %}
-<h1>Update ingredient</h1>
-<div>
+
+<div class="fixed-container">
+    <h1>Update ingredient</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
@@ -16,10 +17,11 @@ Update ingredient
             Update
         </button>
     </form>
-</div>
-<br>
+    <br>
 <div>
     <a href="{% url 'recipeapp:ingredient_details' pk=object.pk %}"
     >Back to ingredient #{{ object.pk }}</a>
 </div>
+</div>
+
 {% endblock %}

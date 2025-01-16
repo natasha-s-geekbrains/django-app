@@ -6,10 +6,13 @@
 
 
 {% block body %}
+
+<div class="fixed-container">
     <h1>Регистрация нового пользователя</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register">
-</form>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+</div>
 {% endblock %}
