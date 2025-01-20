@@ -12,10 +12,6 @@ class RecipeForm(forms.ModelForm):
         model = Recipe
         fields = 'name', 'description', 'cooking_time_min', 'ingredients', 'preview'
 
-    # images = forms.ImageField(
-    #     widget=forms.ClearableFileInput(attrs={'allow_multiple_selected': True}),
-    # )
-
 
 class IngredientForm(forms.ModelForm):
     class Meta:
