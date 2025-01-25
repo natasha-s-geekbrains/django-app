@@ -9,12 +9,7 @@
 <div class="fixed-container">
     <h1>Рецепт #{{ object.pk }}</h1>
     <p>Название рецепта: {{ object.name }}</p>
-    <p>Время приготовления: {{ object.cooking_time_min }}
-        ({% if object.cooking_time_min < 6 %}
-        <span>*Easy recipe</span>
-        {% endif %}
-        )
-    </p>
+    <p>Время приготовления (мин): {{ object.cooking_time_min }}</p>
     <p>Автор рецепта: {% firstof object.author.first_name object.author.username %}</p>
     <div>
         Ингредиенты для рецепта:
@@ -24,6 +19,9 @@
             {% endfor %}
         </ul>
     </div>
+    {% if recipe.preview %}
+    <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
+    {% endif %}
     <br>
     <div>
         <a href="{% url 'recipeapp:recipes_list' %}">Вернуться к списку всех рецептов</a>

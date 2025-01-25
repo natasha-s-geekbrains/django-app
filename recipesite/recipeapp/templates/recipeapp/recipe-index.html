@@ -5,23 +5,22 @@
 {% endblock %}
 
 {% block body %}
-<div class="section-index">
-    <ul class="hr">
-        {% for recipe in recipes %}
-        <li>
-            <div>
-                <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-                >{{ recipe.name }}</a>
-            </div>
-            <div>
-                {% if recipe.preview %}
-                <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
-                {% endif %}
-            </div>
-        </li>
-        {% empty %}
-        Здесь пока нет рецептов...
-        {% endfor %}
-    </ul>
-</div>
+<ul class="hr">
+    {% for recipe in recipes %}
+    <li>
+        <div>
+            <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
+            >{{ recipe.name }}</a>
+        </div>
+        <div>
+            {% if recipe.preview %}
+            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
+            {% endif %}
+        </div>
+    </li>
+    {% empty %}
+    Здесь пока нет рецептов...
+    {% endfor %}
+</ul>
+
 {% endblock %}

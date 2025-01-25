@@ -14,12 +14,7 @@ Cписок рецептов
     ><b>Рецепт #{{ recipe.pk }}</b></a></p>
     <div>
         <p><b>Название рецепта:</b> {{ recipe.name }}</p>
-        <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}
-            ({% if recipe.cooking_time_min < 6 %}
-            <span>*Easy recipe</span>
-            {% endif %}
-            )
-        </p>
+        <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}</p>
         <p><b>Автор рецепта:</b> {% firstof recipe.author.first_name recipe.author.username %}</p>
         <div>
             <b>Ингредиенты для рецепта:</b>
