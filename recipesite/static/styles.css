@@ -1,0 +1,74 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    }
+
+header {
+    height: 200px;
+    padding: 0 40px;
+    }
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.header-image {
+    width: 300px;
+}
+
+section {
+    padding: 0 40px;
+    }
+
+.fixed-container {
+    max-width: 1000px;
+    height: 100%
+    margin-left: auto;
+    margin-right: auto;
+    background-color: floralwhite;
+    }
+
+a {
+    text-decoration: none;
+    font-style: italic;
+    }
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+    }
+
+.section-index {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+footer {
+    padding: 30px;
+    background-color: lightblue;
+    }
+
+footer > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+ul.hr {
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    /* border: 1px solid #000; /* Рамка вокруг текста */
+    padding: 3px; /* Поля вокруг текста */
+   }
+
+ul.hr li div {
+    display: inline; /* Отображать как строчный элемент */
+   }
+

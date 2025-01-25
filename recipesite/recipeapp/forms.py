@@ -6,7 +6,17 @@ from .models import Recipe, Ingredient
 
 
 class RecipeForm(forms.ModelForm):
-    ingredients = forms.ModelMultipleChoiceField(queryset=Ingredient.objects.all(), widget=forms.CheckboxSelectMultiple())
+    ingredients = forms.ModelMultipleChoiceField(
+        queryset=Ingredient.objects.all(),
+        widget=forms.CheckboxSelectMultiple(
+            attrs={'class': 'abcd'}
+        ))
+
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={'class': 'form-control'}
+        )
+    )
 
     class Meta:
         model = Recipe
@@ -14,6 +24,12 @@ class RecipeForm(forms.ModelForm):
 
 
 class IngredientForm(forms.ModelForm):
+    name = forms.CharField(
+        widget=forms.TextInput(
+            attrs={'class': 'form-control'}
+        )
+    )
+
     class Meta:
         model = Ingredient
         fields = 'name', 'description', 'measurement_unit', 'preview'
