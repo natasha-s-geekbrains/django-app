@@ -19,8 +19,17 @@ header > div {
 }
 
 section {
-    padding: 0 40px;
+    padding: 100 40px;
     }
+
+.section-index {
+    padding: 100px
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    }
+
 
 .fixed-container {
     max-width: 1000px;
@@ -40,12 +49,7 @@ a:hover {
     color: red;
     }
 
-.section-index {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    }
+
 
 footer {
     padding: 30px;

@@ -7,13 +7,13 @@ Ingredient #{{ ingredient.pk }}
 {% block body %}
 
 <div class="fixed-container">
-    <h1><u><strong>{{ ingredient.name }}</u></strong></h1>
-    <div>Description: <em>{{ ingredient.description }}</em></div>
-    <div>Unit of measure: {{ ingredient.measurement_unit }}</div>
-    <div>Archived: {{ ingredient.archived }}</div>
+    <h1><u><strong>Ингредиент: {{ ingredient.name }}</u></strong></h1>
+    <div>Описание: <em>{{ ingredient.description }}</em></div>
+    <div>Единица измерения: {{ ingredient.measurement_unit }}</div>
+    <div>Заархивирован: {{ ingredient.archived }}</div>
 
     {% if ingredient.preview %}
-    <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
+    <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px">
     {% endif %}
 
     <h3>Images:</h3>
@@ -25,19 +25,19 @@ Ingredient #{{ ingredient.pk }}
         </div>
 
         {% empty %}
-        <div>No images uploaded yet</div>
+        <div>Пока нет загруженных картинок</div>
         {% endfor %}
 
     </div>
     <br>
     <div>
-        <a href="{% url 'recipeapp:ingredient_update' pk=ingredient.pk %}">Update ingredient</a>
+        <a href="{% url 'recipeapp:ingredient_update' pk=ingredient.pk %}">Внести изменения в ингредиент</a>
     </div>
     <div>
-        <a href="{% url 'recipeapp:ingredient_delete' pk=ingredient.pk %}">Archive ingredient</a>
+        <a href="{% url 'recipeapp:ingredient_delete' pk=ingredient.pk %}">Заархивировать ингредиент</a>
     </div>
     <div>
-        <a href="{% url 'recipeapp:ingredients_list' %}">Back to ingredients list</a>
+        <a href="{% url 'recipeapp:ingredients_list' %}">Назад в список ингредиентов</a>
     </div>
 </div>
 
