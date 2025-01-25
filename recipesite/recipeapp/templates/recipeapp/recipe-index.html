@@ -11,10 +11,7 @@
         <li>
             <div>
                 <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-                >{{ recipe.name }} in {{ recipe.cooking_time_min }} min</a>
-                {% if time < 6 %}
-                <span>*Easy recipe</span>
-                {% endif %}
+                >{{ recipe.name }}</a>
             </div>
             <div>
                 {% if recipe.preview %}

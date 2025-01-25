@@ -34,6 +34,6 @@ class IngredientForm(forms.ModelForm):
         model = Ingredient
         fields = 'name', 'description', 'measurement_unit', 'preview'
 
-    images = forms.ImageField(
-        widget=forms.ClearableFileInput(attrs={'allow_multiple_selected': True}),
-    )
+    # images = forms.ImageField(
+    #     widget=forms.ClearableFileInput(attrs={'allow_multiple_selected': True}),
+    # )

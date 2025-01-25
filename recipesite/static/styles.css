@@ -22,13 +22,13 @@ section {
     padding: 100 40px;
     }
 
-.section-index {
+/*.section-index {
     padding: 100px
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    }
+    }*/
 
 
 .fixed-container {

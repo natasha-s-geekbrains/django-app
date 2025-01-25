@@ -11,7 +11,7 @@ Cписок рецептов
     {% if object_list %}
     {% for recipe in object_list %}
     <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-    >Рецепт #{{ recipe.pk }}</a></p>
+    ><b>Рецепт #{{ recipe.pk }}</b></a></p>
     <div>
         <p><b>Название рецепта:</b> {{ recipe.name }}</p>
         <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}
@@ -30,7 +30,7 @@ Cписок рецептов
             </ul>
         </div>
         {% if recipe.preview %}
-        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
+        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
         {% endif %}
     </div>
     {% endfor %}
