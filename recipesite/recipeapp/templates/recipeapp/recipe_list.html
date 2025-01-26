@@ -11,18 +11,13 @@ Cписок рецептов
     {% if object_list %}
     {% for recipe in object_list %}
     <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-    >Рецепт #{{ recipe.pk }}</a></p>
+    ><b>Рецепт #{{ recipe.pk }}</b></a></p>
     <div>
-        <p>Name: {{ recipe.name }}</p>
-        <p>Cooking time: {{ recipe.cooking_time_min }}
-            ({% if recipe.cooking_time_min < 6 %}
-            <span>*Easy recipe</span>
-            {% endif %}
-            )
-        </p>
-        <p>Recipe author: {% firstof recipe.author.first_name recipe.author.username %}</p>
+        <p><b>Название рецепта:</b> {{ recipe.name }}</p>
+        <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}</p>
+        <p><b>Автор рецепта:</b> {% firstof recipe.author.first_name recipe.author.username %}</p>
         <div>
-            Ingredients for recipe:
+            <b>Ингредиенты для рецепта:</b>
             <ul>
                 {% for ingredient in recipe.ingredients.all %}
                 <li>{{ ingredient.name }}</li>
@@ -30,12 +25,12 @@ Cписок рецептов
             </ul>
         </div>
         {% if recipe.preview %}
-        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
+        <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
         {% endif %}
     </div>
     {% endfor %}
     {% else %}
-    <h3>No recipes yet</h3>
+    <h3>Здесь пока нет рецептов!</h3>
     {% endif %}
     <br>
     <div>

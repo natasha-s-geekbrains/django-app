@@ -10,13 +10,13 @@
     <h1>Вы уверены, что хотите удалить рецепт {{ object.name }}?</h1>
     <br>
     <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-    >Back to recipe #{{ object.pk }}</a>
+    >Назад на страницу рецепта #{{ object.pk }}</a>
     <br>
     <div>
         <form method="post">
             {% csrf_token %}
             {{ from.as_p }}
-            <button type="submit">Archive</button>
+            <button type="submit">В архив!</button>
         </form>
     </div>
 </div>
