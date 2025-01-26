@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    }
+
+header {
+    height: 200px;
+    padding: 0 40px;
+    }
+
+header > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+.header-image {
+    width: 300px;
+}
+section {
+    padding: 40px;
+}
+
+section > div {
+    text-align: center;
+    }
+
+footer {
+    padding: 5px 40px;
+    }
+
+footer > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+
+.fixed-container {
+    max-width: 1000px;
+    height: 100%
+    margin-left: auto;
+    margin-right: auto;
+    background-color: palegreen;
+    }
+
+a {
+    text-decoration: none;
+    font-style: italic;
+    }
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+    }
+
+
+ul.hr {
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+   }
+
+ul.hr li {
+    display: inline;
+    margin-right: 5px;
+    border: 1px solid #000;
+    padding: 3px;
+   }
+
+ul.hr li div {
+    display: inline;
+   }
+
+
