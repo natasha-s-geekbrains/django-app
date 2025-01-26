@@ -14,24 +14,24 @@
     {% for ingredient in ingredients %}
     <div>
         <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"
-        >Name: {{ ingredient.name }}</a></p>
-        <p>Unit of measure: {{ ingredient.measurement_unit }}</p>
+        ><b>Название ингредиента:</b> {{ ingredient.name }}</a></p>
+        <p><b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}</p>
 
         {% if ingredient.preview %}
-        <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
+        <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px">
         {% endif %}
     </div>
     {% endfor %}
     <br>
     <div>
         <a href="{% url 'recipeapp:ingredient_create' %}"
-        >Create a new ingredient</a>
+        >Создать новый ингредиент</a>
     </div>
     {% else %}
     {% url 'recipeapp:ingredient_create' as create_ingredient_url %}
-    <h3>No ingredients yet</h3>
+    <h3>Здесь пока нет ингредиентов!</h3>
     <a href="{{ create_ingredient_url }}"
-    >Create a new one</a>
+    >Создать новый ингредиент</a>
     {% endif %}
 </div>
 

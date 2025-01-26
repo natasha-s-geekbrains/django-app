@@ -7,20 +7,20 @@ Update ingredient
 {% block body %}
 
 <div class="fixed-container">
-    <h1>Update ingredient</h1>
+    <h1>Внести изменения в ингредиент</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         {{ form.as_p }}
 
         <button type="submit">
-            Update
+            Изменить!
         </button>
     </form>
     <br>
 <div>
     <a href="{% url 'recipeapp:ingredient_details' pk=object.pk %}"
-    >Back to ingredient #{{ object.pk }}</a>
+    >Вернуться на страницу ингредиента #{{ object.pk }}</a>
 </div>
 </div>
 

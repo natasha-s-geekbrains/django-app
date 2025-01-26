@@ -95,7 +95,7 @@ def create_ingredient(request: HttpRequest) -> HttpResponse:
 
 class IngredientCreateView(CreateView):
     model = Ingredient
-    fields = 'name', 'description', 'measurement_unit', 'preview'
+    form_class = IngredientForm
     success_url = reverse_lazy('recipeapp:ingredients_list')
 
 

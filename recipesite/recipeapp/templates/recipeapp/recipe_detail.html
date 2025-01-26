@@ -8,25 +8,29 @@
 
 <div class="fixed-container">
     <h1>Рецепт #{{ object.pk }}</h1>
-    <p>Name: {{ object.name }}</p>
-    <p>Cooking time: {{ object.cooking_time_min }}
-        ({% if object.cooking_time_min < 6 %}
-        <span>*Easy recipe</span>
-        {% endif %}
-        )
-    </p>
-    <p>Recipe author: {% firstof object.author.first_name object.author.username %}</p>
+    <p>Название рецепта: {{ object.name }}</p>
+    <p>Время приготовления (мин): {{ object.cooking_time_min }}</p>
+    <p>Автор рецепта: {% firstof object.author.first_name object.author.username %}</p>
     <div>
-        Ingredients for recipe:
+        Ингредиенты для рецепта:
         <ul>
             {% for ingredient in object.ingredients.all %}
             <li>{{ ingredient.name }}</li>
             {% endfor %}
         </ul>
     </div>
+    {% if recipe.preview %}
+    <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
+    {% endif %}
     <br>
+    {% if recipe.author == user %}
     <div>
-        <a href="{% url 'recipeapp:recipes_list' %}">Back to recipes</a>
+        <p><a href="{% url 'recipeapp:recipe_update' pk=recipe.pk %}">Редактировать рецепт</a></p>
+        <p><a href="{% url 'recipeapp:recipe_delete' pk=recipe.pk %}">Удалить рецепт</a></p>
+    </div>
+    {% endif %}
+    <div>
+        <a href="{% url 'recipeapp:recipes_list' %}">Вернуться к списку всех рецептов</a>
     </div>
 </div>
 
