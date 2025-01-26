@@ -23,6 +23,12 @@
     <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
     {% endif %}
     <br>
+    {% if recipe.author == user %}
+    <div>
+        <p><a href="{% url 'recipeapp:recipe_update' pk=recipe.pk %}">Редактировать рецепт</a></p>
+        <p><a href="{% url 'recipeapp:recipe_delete' pk=recipe.pk %}">Удалить рецепт</a></p>
+    </div>
+    {% endif %}
     <div>
         <a href="{% url 'recipeapp:recipes_list' %}">Вернуться к списку всех рецептов</a>
     </div>

@@ -34,7 +34,7 @@ Ingredient #{{ ingredient.pk }}
         <a href="{% url 'recipeapp:ingredient_update' pk=ingredient.pk %}">Внести изменения в ингредиент</a>
     </div>
     <div>
-        <a href="{% url 'recipeapp:ingredient_delete' pk=ingredient.pk %}">Заархивировать ингредиент</a>
+        <a href="{% url 'recipeapp:ingredient_delete' pk=ingredient.pk %}">Удалить ингредиент</a>
     </div>
     <div>
         <a href="{% url 'recipeapp:ingredients_list' %}">Назад в список ингредиентов</a>
