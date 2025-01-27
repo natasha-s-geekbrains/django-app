@@ -30,6 +30,17 @@ section > div {
     justify-content: space-around;
     align-items: center;
 }
+.ingredient-view {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #0dec16;
+    padding: 3px;
+}
+.ingred-list-header {
+    text-align: center;
+}
+
 .user-data {
     color: blue;
     font-size: 70%;
