@@ -8,14 +8,13 @@
 {% block body %}
 
 <div class="fixed-container">
-    <h1>Данные пользователя</h1>
+    <h1><u>Данные пользователя:</u></h1>
     {% if user.is_authenticated %}
-    <h2>Detail</h2>
-    <h2>Логин: {{ user.username }}</h2>
-    <h2>Имя: {{ user.first_name }}</h2>
-    <h2>Фамилия: {{ user.last_name }}</h2>
-    <h2>Email: {{ user.email }}</h2>
-    <h2>Доп.информация: {{ user.profile.bio }}</h2>
+    <h2>Логин: <span class="user-data">{{ user.username }}</span></h2>
+    <h2>Имя: <span class="user-data">{{ user.first_name }}</span></h2>
+    <h2>Фамилия: <span class="user-data">{{ user.last_name }}</span></h2>
+    <h2>Email: <span class="user-data">{{ user.email }}</span></h2>
+    <h2>Доп.информация: <span class="user-data">{{ user.profile.bio }}</span></h2>
     {% else %}
     <h2>Невозможно определить пользователя, так как никто не выполнил вход</h2>
     {% endif %}
