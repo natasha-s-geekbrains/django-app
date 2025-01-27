@@ -9,12 +9,11 @@
     {% for recipe in recipes %}
     <li>
         <div>
-            <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
-            >{{ recipe.name }}</a>
+            <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}">{{ recipe.name }}</a>
         </div>
         <div>
             {% if recipe.preview %}
-            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
+            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="150px" height="150px">
             {% endif %}
         </div>
     </li>
