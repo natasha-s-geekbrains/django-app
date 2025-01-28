@@ -9,17 +9,19 @@
 {% block body %}
 
 <div class="fixed-container">
-    <h1><u>Список всех ингредиентов:</u></h1>
+    <h1 class="ingred-list-header"><u>Список всех ингредиентов:</u></h1>
     {% if ingredients %}
     {% for ingredient in ingredients %}
-    <div>
-        <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"
-        ><b>Название ингредиента:</b> {{ ingredient.name }}</a></p>
-        <p><b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}</p>
-
-        {% if ingredient.preview %}
-        <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px">
-        {% endif %}
+    <div class="ingredient-view">
+        <div>
+            <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"><b> {{ ingredient.name }}</b></a></p>
+            <p><b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}</p>
+        </div>
+        <div>
+            {% if ingredient.preview %}
+            <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px" height="100">
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
     <br>

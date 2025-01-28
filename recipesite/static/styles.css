@@ -22,9 +22,39 @@ section {
 }
 
 section > div {
-    text-align: center;
+    /*text-align: left;*/
+    padding: 4px
     }
+.recipes-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.recipe-detail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ingredient-view {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #0dec16;
+    padding: 3px;
+}
+.ingred-list-header {
+    text-align: center;
+}
+.recipe-name {
+    color: #FF0000;
+    font-family: serif;
+    font-size: 150%;
+}
 
+.user-data {
+    color: blue;
+    font-size: 70%;
+}
 footer {
     padding: 5px 40px;
     }
@@ -60,14 +90,16 @@ ul.hr {
    }
 
 ul.hr li {
-    display: inline;
-    margin-right: 5px;
+    display: inline-block;
+    /*margin-right: 5px;
     border: 1px solid #000;
-    padding: 3px;
+    padding: 3px;*/
    }
 
 ul.hr li div {
-    display: inline;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
    }
 
 
