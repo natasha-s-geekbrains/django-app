@@ -22,10 +22,15 @@ section {
 }
 
 section > div {
-    text-align: left;
+    /*text-align: left;*/
     padding: 4px
     }
-.recipe-view {
+.recipes-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.recipe-detail {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -39,6 +44,11 @@ section > div {
 }
 .ingred-list-header {
     text-align: center;
+}
+.recipe-name {
+    color: #FF0000;
+    font-family: serif;
+    font-size: 150%;
 }
 
 .user-data {

@@ -5,23 +5,30 @@
 {% endblock %}
 
 {% block body %}
-
 <div class="fixed-container">
     <h1>Рецепт #{{ object.pk }}</h1>
-    <p>Название рецепта: {{ object.name }}</p>
-    <p>Время приготовления (мин): {{ object.cooking_time_min }}</p>
-    <p>Автор рецепта: {% firstof object.author.first_name object.author.username %}</p>
-    <div>
-        Ингредиенты для рецепта:
-        <ul>
-            {% for ingredient in object.ingredients.all %}
-            <li>{{ ingredient.name }}</li>
-            {% endfor %}
-        </ul>
+    <h2><span class="recipe-name">{{ object.name }}</span></h2></p>
+    <div class="recipe-detail">
+        <div>
+            <p><b>Время приготовления (мин):</b> {{ object.cooking_time_min }}</p>
+            <p><b>Автор рецепта:</b> {% firstof object.author.first_name object.author.username %}</p>
+
+            <b>Ингредиенты для рецепта:</b>
+            <ul>
+                {% for ingredient in object.ingredients.all %}
+                <li>{{ ingredient.name }}</li>
+                {% endfor %}
+            </ul>
+            <p><b>Как приготовить:</b> {{ object.description }}</p>
+
+        </div>
+        {% if recipe.preview %}
+        <div>
+            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="400px">
+        </div>
+        {% endif %}
+
     </div>
-    {% if recipe.preview %}
-    <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="100px">
-    {% endif %}
     <br>
     {% if recipe.author == user %}
     <div>
@@ -33,5 +40,4 @@
         <a href="{% url 'recipeapp:recipes_list' %}">Вернуться к списку всех рецептов</a>
     </div>
 </div>
-
 {% endblock %}
