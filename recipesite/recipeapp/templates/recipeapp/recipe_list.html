@@ -12,9 +12,9 @@ Cписок рецептов
     {% for recipe in object_list %}
     <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
     ><b>Рецепт #{{ recipe.pk }}</b></a></p>
-    <div class="recipe-view">
+    <div class="recipes-list">
         <div>
-            <p><b>Название рецепта:</b> {{ recipe.name }}</p>
+            <p><b>Название рецепта:</b> <span  class="recipe-name">{{ recipe.name }}</span></p>
             <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}</p>
             <p><b>Автор рецепта:</b> {% firstof recipe.author.first_name recipe.author.username %}</p>
             <div>
