@@ -8,6 +8,7 @@ from .models import Recipe, Ingredient
 class RecipeForm(forms.ModelForm):
 
     ingredients = forms.ModelMultipleChoiceField(
+        label='Ингредиенты:',
         queryset=Ingredient.objects.all(),
         widget=forms.CheckboxSelectMultiple())
 
