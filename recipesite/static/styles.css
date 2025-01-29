@@ -4,25 +4,43 @@ html, body {
     }
 
 header {
-    height: 200px;
+    /*height: 300px;*/
     padding: 0 40px;
     }
 
 header > div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     }
 
-.header-image {
-    width: 300px;
+.header-text {
+    width: 60%;
+    text-align: center;
+    color: #DC143C;
+    font-family: serif;
+    font-style: italic;
+    font-size: 250%
+
 }
-section {
-    padding: 40px;
+.header-text p {
+    padding: 5px;
+}
+.header-image {
+    width:300px;
+}
+.header-menu {
+    width: 60%;
 }
 
+img {
+    border-radius: 10%;
+}
+
+section {
+    padding: 10px 40px;
+}
 section > div {
-    /*text-align: left;*/
     padding: 4px
     }
 .recipes-list {
@@ -35,7 +53,14 @@ section > div {
     justify-content: space-around;
     align-items: center;
 }
-.ingredient-view {
+
+.recipe-name {
+    color: #FF0000;
+    font-family: serif;
+    font-size: 150%;
+}
+
+.ingredients-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -45,19 +70,26 @@ section > div {
 .ingred-list-header {
     text-align: center;
 }
-.recipe-name {
-    color: #FF0000;
-    font-family: serif;
-    font-size: 150%;
+.ingred-details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .user-data {
     color: blue;
     font-size: 70%;
 }
+.long-warning{
+    word-break: keep-all;
+    color: #FF0000;
+    font-family: serif;
+    font-style: italic;
+    font-size: 80%
+}
 footer {
-    padding: 5px 40px;
-    }
+    padding: 10px 40px;
+}
 
 footer > div {
     display: flex;

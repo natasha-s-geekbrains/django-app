@@ -5,29 +5,19 @@ Ingredient #{{ ingredient.pk }}
 {% endblock %}
 
 {% block body %}
-
+<h1><u><strong>{{ ingredient.name }}</strong></u></strong></h1>
 <div class="fixed-container">
-    <h1><u><strong>Ингредиент: {{ ingredient.name }}</u></strong></h1>
-    <div>Описание: <em>{{ ingredient.description }}</em></div>
-    <div>Единица измерения: {{ ingredient.measurement_unit }}</div>
-    <div>Заархивирован: {{ ingredient.archived }}</div>
-
-    {% if ingredient.preview %}
-    <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px">
-    {% endif %}
-
-    <h3>Images:</h3>
-    <div>
-        {% for img in ingredient.images.all %}
+    <div class="ingred-details">
         <div>
-            <img src="{{ img.image.url }}" alt="{{ img.image.name }}">
-            <div>{{ img.description }}</div>
+            <div><b>Описание:</b> <em>{{ ingredient.description }}</em></div>
+            <div><b>Единица измерения:</b> {{ ingredient.measurement_unit }}</div>
+            <div>Заархивирован: {{ ingredient.archived }}</div>
         </div>
-
-        {% empty %}
-        <div>Пока нет загруженных картинок</div>
-        {% endfor %}
-
+        {% if ingredient.preview %}
+        <div>
+            <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="400px">
+        </div>
+        {% endif %}
     </div>
     <br>
     <div>

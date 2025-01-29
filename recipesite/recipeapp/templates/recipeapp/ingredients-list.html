@@ -12,7 +12,7 @@
     <h1 class="ingred-list-header"><u>Список всех ингредиентов:</u></h1>
     {% if ingredients %}
     {% for ingredient in ingredients %}
-    <div class="ingredient-view">
+    <div class="ingredients-list">
         <div>
             <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"><b> {{ ingredient.name }}</b></a></p>
             <p><b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}</p>
