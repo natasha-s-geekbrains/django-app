@@ -4,32 +4,29 @@ html, body {
     }
 
 header {
-    /*height: 300px;*/
     padding: 0 40px;
     }
 
 header > div {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 30% 35% 35%;
     align-items: center;
-    }
-
+    border: 1px solid #91e381;
+}
 .header-text {
-    width: 60%;
+    width: 70%;
     text-align: center;
     color: #DC143C;
     font-family: serif;
+    justify-self: center;
     font-size: 250%
-
-}
-.header-text p {
-    padding: 5px;
 }
 .header-image {
-    width:300px;
+    width: 100%;
 }
+
 .header-menu {
-    width: 60%;
+    width: 150%;
 }
 
 img {
@@ -37,11 +34,15 @@ img {
 }
 
 section {
-    padding: 10px 40px;
+    padding: 0px 40px;
 }
 section > div {
-    padding: 4px
+    border: 1px solid #91e381;
     }
+.section-index-bottom-href {
+    text-align: center;
+}
+
 .recipes-list {
     display: flex;
     justify-content: space-around;
@@ -60,15 +61,27 @@ section > div {
 }
 
 .ingredients-list {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
     align-items: center;
-    border: 1px solid #0dec16;
-    padding: 3px;
+    border: 1px solid #91e381;
+    padding: 15px;
 }
 .ingred-list-header {
     text-align: center;
 }
+.ingred-list-img-div{
+    justify-self: center;
+}
+.ingred-list-img {
+    width: 150px;
+    height: 150px;
+}
+.ingred-list-name {
+    font-size: 200%
+}
+
+
 .ingred-details{
     display: flex;
     justify-content: space-around;
@@ -87,13 +100,15 @@ section > div {
     font-size: 80%
 }
 footer {
-    padding: 10px 40px;
+    padding: 25px 40px;
 }
 
 footer > div {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid #91e381;
+    padding: 25px;
     }
 
 .fixed-container {
@@ -117,15 +132,12 @@ a:hover {
 
 
 ul.hr {
-    margin: 0; /* Обнуляем значение отступов */
-    padding: 4px; /* Значение полей */
+    margin: 0;
+    padding: 4px;
    }
 
 ul.hr li {
     display: inline-block;
-    /*margin-right: 5px;
-    border: 1px solid #000;
-    padding: 3px;*/
    }
 
 ul.hr li div {
