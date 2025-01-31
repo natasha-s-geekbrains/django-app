@@ -19,7 +19,6 @@ header > div {
     text-align: center;
     color: #DC143C;
     font-family: serif;
-    font-style: italic;
     font-size: 250%
 
 }
@@ -55,7 +54,7 @@ section > div {
 }
 
 .recipe-name {
-    color: #FF0000;
+    color: #DC143C;
     font-family: serif;
     font-size: 150%;
 }
@@ -102,12 +101,13 @@ footer > div {
     height: 100%
     margin-left: auto;
     margin-right: auto;
-    background-color: palegreen;
+    background-color: #DBF5CA;
     }
 
 a {
     text-decoration: none;
     font-style: italic;
+    color: #3967C8
     }
 
 a:hover {
