@@ -14,13 +14,15 @@
     {% for ingredient in ingredients %}
     <div class="ingredients-list">
         <div>
-            <p><a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}"><b> {{ ingredient.name }}</b></a></p>
-            <p><b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}</p>
+            <a class="ingred-list-name" href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}">{{ ingredient.name }}</a>
+        </div>
+        <div class="ingred-list-img-div">
+            {% if ingredient.preview %}
+            <img class="ingred-list-img" src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
+            {% endif %}
         </div>
         <div>
-            {% if ingredient.preview %}
-            <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="100px" height="100">
-            {% endif %}
+            <b><small>Единица измерения:</small></b> {{ ingredient.measurement_unit }}
         </div>
     </div>
     {% endfor %}
