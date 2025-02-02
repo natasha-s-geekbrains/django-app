@@ -6,10 +6,10 @@
 
 {% block body %}
 <div class="fixed-container">
-    <h1>Рецепт #{{ object.pk }}</h1>
-    <h2><span class="recipe-name">{{ object.name }}</span></h2></p>
+    <h1 class="section-header">Рецепт #{{ object.pk }}</h1>
     <div class="recipe-detail">
         <div>
+            <h2><span class="recipe-name">{{ object.name }}</span></h2></p>
             <p><b>Время приготовления (мин):</b> {{ object.cooking_time_min }}</p>
             <p><b>Автор рецепта:</b> {% firstof object.author.first_name object.author.username %}</p>
 

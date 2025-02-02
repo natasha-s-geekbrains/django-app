@@ -8,7 +8,7 @@
 {% block body %}
 
 <div class="fixed-container">
-    <h1>Регистрация нового пользователя</h1>
+    <h1 class="section-header">Регистрация нового пользователя</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
