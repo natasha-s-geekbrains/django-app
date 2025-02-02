@@ -44,14 +44,17 @@ section > div {
 }
 
 .recipes-list {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
     align-items: center;
+    border: 1px solid #91e381;
+    padding: 15px;
 }
 .recipe-detail {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 15px;
 }
 
 .recipe-name {
@@ -67,8 +70,9 @@ section > div {
     border: 1px solid #91e381;
     padding: 15px;
 }
-.ingred-list-header {
+.section-header {
     text-align: center;
+    text-decoration: underline;
 }
 .ingred-list-img-div{
     justify-self: center;
@@ -84,9 +88,20 @@ section > div {
 
 .ingred-details{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: top;
 }
+
+.ingred-det-data {
+    margin: 5px;
+    align-self: center
+}
+
+.ingred-det-img {
+    margin: 5px;
+    align-self: center
+}
+
 
 .user-data {
     color: blue;
@@ -137,13 +152,20 @@ ul.hr {
    }
 
 ul.hr li {
-    display: inline-block;
+    border: 1px solid #91e381;
+    list-style-position:inside;
+    list-style: none;
    }
 
 ul.hr li div {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 60% 40%;
     align-items: center;
+    padding: 5px;
    }
+ul.hr li div a {
+    font-size: 200%;
+    text-align: center;
+}
 
 

@@ -5,17 +5,18 @@ Ingredient #{{ ingredient.pk }}
 {% endblock %}
 
 {% block body %}
-<h1><u><strong>{{ ingredient.name }}</strong></u></strong></h1>
+
 <div class="fixed-container">
+    <h1 class="section-header">{{ ingredient.name }}</h1>
     <div class="ingred-details">
-        <div>
+        <div class="ingred-det-data">
             <div><b>Описание:</b> <em>{{ ingredient.description }}</em></div>
             <div><b>Единица измерения:</b> {{ ingredient.measurement_unit }}</div>
             <div>Заархивирован: {{ ingredient.archived }}</div>
         </div>
         {% if ingredient.preview %}
-        <div>
-            <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}" width="400px">
+        <div class="ingred-det-img">
+            <img src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
         </div>
         {% endif %}
     </div>
