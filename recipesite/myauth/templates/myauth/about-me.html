@@ -8,7 +8,7 @@
 {% block body %}
 
 <div class="fixed-container">
-    <h1><u>Данные пользователя:</u></h1>
+    <h1 class="section-header">Данные пользователя:</h1>
     {% if user.is_authenticated %}
     <h2>Логин: <span class="user-data">{{ user.username }}</span></h2>
     <h2>Имя: <span class="user-data">{{ user.first_name }}</span></h2>
