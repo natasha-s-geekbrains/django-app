@@ -20,7 +20,7 @@ class RecipeForm(forms.ModelForm):
     )
 
     description = forms.CharField(
-        label='Как приготовить:',
+        label='Шаги приготовления:',
         widget=forms.Textarea(
             attrs={'class': 'form-control'}
         )
@@ -55,7 +55,7 @@ class IngredientForm(forms.ModelForm):
     )
 
     description = forms.CharField(
-        label='Примечание:',
+        label='Описание:',
         widget=forms.Textarea(
             attrs={'class': 'form-control'}
         )
