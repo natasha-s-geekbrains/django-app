@@ -24,19 +24,31 @@ header > div {
     border: 1px solid #91e381;
 }
 .header-text {
-    width: 70%;
+    max-width: 70%;
     text-align: center;
     color: #DC143C;
     font-family: serif;
     justify-self: center;
-    font-size: 250%
+    font-size: 2vw;
 }
 .header-image {
-    width: 100%;
+    max-width: 100%;
 }
 
 .header-menu {
-    width: 150%;
+    max-width: 150%;
+}
+
+.header-menu ul {
+  list-style-type: none;
+}
+
+.header-menu ul li {
+    line-height: 1.5vw;
+}
+
+.header-menu a {
+    font-size: 1vw;
 }
 
 img {
@@ -49,7 +61,7 @@ section {
 section > div {
     border: 1px solid #91e381;
     }
-.section-index-bottom-href {
+.section-index-top-href {
     text-align: center;
 }
 
@@ -92,7 +104,7 @@ section > div {
     height: 150px;
 }
 .ingred-list-name {
-    font-size: 200%
+    font-size: 200%;
 }
 
 
@@ -104,12 +116,12 @@ section > div {
 
 .ingred-det-data {
     margin: 5px;
-    align-self: center
+    align-self: center;
 }
 
 .ingred-det-img {
     margin: 5px;
-    align-self: center
+    align-self: center;
 }
 .ingred-det-img img {
     width: 300px;
@@ -125,7 +137,7 @@ section > div {
     color: #FF0000;
     font-family: serif;
     font-style: italic;
-    font-size: 80%
+    font-size: 80%;
 }
 footer {
     padding: 25px 40px;
@@ -143,7 +155,7 @@ footer > div {
 a {
     text-decoration: none;
     font-style: italic;
-    color: #3967C8
+    color: #3967C8;
     }
 
 a:hover {
@@ -168,10 +180,18 @@ ul.hr li div {
     grid-template-columns: 60% 40%;
     align-items: center;
     padding: 5px;
+    max-width: 100%;
    }
-ul.hr li div a {
-    font-size: 200%;
+ul.hr li div div a {
+    font-size: 2.2vw;
     text-align: center;
+}
+
+ul.hr li div div img {
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    height: auto;
 }
 
 

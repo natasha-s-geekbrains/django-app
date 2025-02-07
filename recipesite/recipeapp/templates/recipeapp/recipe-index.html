@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="section-index-bottom-href"><a href="{% url 'recipeapp:recipes_list' %}">Посмотреть все рецепты</a></div>
+<div class="section-index-top-href"><a href="{% url 'recipeapp:recipes_list' %}">Посмотреть все рецепты</a></div>
 <ul class="hr">
     {% for recipe in recipes %}
     <li>
@@ -13,13 +13,12 @@
             <div>
                 <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}">{{ recipe.name }}</a>
             </div>
+            {% if recipe.preview %}
             <div>
-                {% if recipe.preview %}
-                <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="250px" height="250px">
-                {% endif %}
+                <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
             </div>
+            {% endif %}
         </div>
-
     </li>
     {% empty %}
     Здесь пока нет рецептов...

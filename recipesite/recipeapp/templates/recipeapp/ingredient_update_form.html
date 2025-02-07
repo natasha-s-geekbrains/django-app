@@ -20,7 +20,7 @@ Update ingredient
     <br>
 <div>
     <a href="{% url 'recipeapp:ingredient_details' pk=object.pk %}"
-    >Вернуться на страницу ингредиента #{{ object.pk }}</a>
+    >Вернуться на страницу ингредиента <{{ object.name }}></a>
 </div>
 </div>
 
