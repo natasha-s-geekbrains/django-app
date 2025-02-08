@@ -1,13 +1,13 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Ingredient #{{ ingredient.pk }}
+Ингредиент #{{ ingredient.pk }}
 {% endblock %}
 
 {% block body %}
 
 <div class="fixed-container">
-    <h1 class="section-header">{{ ingredient.name }}</h1>
+    <p class="section-header">{{ ingredient.name }}</p>
     <div class="ingred-details">
         <div class="ingred-det-data">
             <div><b>Описание:</b> <em>{{ ingredient.description }}</em></div>

@@ -7,30 +7,34 @@ Cписок рецептов
 {% block body %}
 
 <div class="fixed-container">
-    <h1 class="section-header">Список всех рецептов:</h1>
+    <p class="section-header">Список всех рецептов:</p>
     {% if object_list %}
     {% for recipe in object_list %}
     <div class="recipes-list">
-        <div>
+        <div class="recipe-data">
             <p><a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}"
             ><b>Рецепт #{{ recipe.pk }}</b></a></p>
-        </div>
-        <div>
-            <p><b>Название рецепта:</b> <span class="recipe-name">{{ recipe.name }}</span></p>
+            <a id="a-recipe-name" href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}">
+                <p class="recipe-name">{{ recipe.name }}</p>
+            </a>
+
             <p><b>Время приготовления (мин):</b> {{ recipe.cooking_time_min }}</p>
             <p><b>Автор рецепта:</b> {% firstof recipe.author.first_name recipe.author.username %}</p>
-            <div>
-                <b>Ингредиенты для рецепта:</b>
-                <ul>
-                    {% for ingredient in recipe.ingredients.all %}
-                    <li>{{ ingredient.name }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
+            <!--            <div>-->
+            <!--                <b>Ингредиенты для рецепта:</b>-->
+            <!--                <ul>-->
+            <!--                    {% for ingredient in recipe.ingredients.all %}-->
+            <!--                    <li>{{ ingredient.name }}</li>-->
+            <!--                    {% endfor %}-->
+            <!--                </ul>-->
+            <!--            </div>-->
         </div>
         <div>
             {% if recipe.preview %}
-            <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}" width="300px">
+            <a href="{% url 'recipeapp:recipe_details' pk=recipe.pk %}">
+                <img src="{{ recipe.preview.url }}" alt="{{ recipe.preview.name }}">
+            </a>
+
             {% endif %}
         </div>
     </div>
