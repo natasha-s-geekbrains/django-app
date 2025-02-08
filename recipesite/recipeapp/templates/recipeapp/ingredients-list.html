@@ -9,16 +9,20 @@
 {% block body %}
 
 <div class="fixed-container">
-    <h1 class="section-header">Список всех ингредиентов:</h1>
+    <p class="section-header">Список всех ингредиентов:</p>
     {% if ingredients %}
     {% for ingredient in ingredients %}
     <div class="ingredients-list">
         <div>
-            <a class="ingred-list-name" href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}">{{ ingredient.name }}</a>
+            <a class="ingred-list-name" href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}">
+                {{ ingredient.name }}</a>
         </div>
         <div class="ingred-list-img-div">
             {% if ingredient.preview %}
-            <img class="ingred-list-img" src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
+            <a href="{% url 'recipeapp:ingredient_details' pk=ingredient.pk %}">
+                <img class="ingred-list-img" src="{{ ingredient.preview.url }}" alt="{{ ingredient.preview.name }}">
+            </a>
+
             {% endif %}
         </div>
         <div>
@@ -38,6 +42,5 @@
     >Создать новый ингредиент</a>
     {% endif %}
 </div>
-
 {% endblock %}
 

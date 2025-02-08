@@ -67,11 +67,26 @@ section > div {
 
 .recipes-list {
     display: grid;
-    grid-template-columns: 10% 60% 30%;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     border: 1px solid #91e381;
     padding: 15px;
+    justify-items: stretch;
 }
+
+.recipe-data {
+    font-size: 1.5vw;
+}
+
+.recipes-list div a img {
+    width: 300px;
+    height: 300px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
 .recipe-detail {
     display: flex;
     justify-content: space-around;
@@ -84,6 +99,13 @@ section > div {
     font-family: serif;
     font-size: 150%;
 }
+#a-recipe-name {
+    text-decoration: none;
+    font-family: serif;
+    color: #DC143C;
+    font-style: normal;
+}
+
 
 .ingredients-list {
     display: grid;
@@ -95,6 +117,7 @@ section > div {
 .section-header {
     text-align: center;
     text-decoration: underline;
+    font-size: 3vw;
 }
 .ingred-list-img-div{
     justify-self: center;
@@ -104,7 +127,7 @@ section > div {
     height: 150px;
 }
 .ingred-list-name {
-    font-size: 200%;
+    font-size: 2.5vw;
 }
 
 
