@@ -1,13 +1,13 @@
 {% extends 'recipeapp/base.html' %}
 
 {% block title %}
-Update ingredient
+Изменить ингредиент
 {% endblock %}
 
 {% block body %}
 
 <div class="fixed-container">
-    <h1 class="section-header">Внести изменения в ингредиент</h1>
+    <p class="section-header">Внести изменения в ингредиент</p>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
