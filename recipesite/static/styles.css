@@ -64,6 +64,11 @@ section > div {
 .section-index-top-href {
     text-align: center;
 }
+.section-header {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 3vw;
+}
 
 .recipes-list {
     display: grid;
@@ -84,16 +89,6 @@ section > div {
     max-width: 100%;
     height: auto;
 }
-
-
-
-.recipe-detail {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px;
-}
-
 .recipe-name {
     color: #DC143C;
     font-family: serif;
@@ -106,6 +101,20 @@ section > div {
     font-style: normal;
 }
 
+.recipe-detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-items: stretch;
+    align-items: center;
+    padding: 15px;
+}
+.recipe-detail div img {
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    height: auto;
+}
+
 
 .ingredients-list {
     display: grid;
@@ -113,11 +122,6 @@ section > div {
     align-items: center;
     border: 1px solid #91e381;
     padding: 15px;
-}
-.section-header {
-    text-align: center;
-    text-decoration: underline;
-    font-size: 3vw;
 }
 .ingred-list-img-div{
     justify-self: center;
@@ -148,7 +152,8 @@ section > div {
 }
 .ingred-det-img img {
     width: 300px;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
 }
 
 .user-data {
